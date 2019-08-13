@@ -5,15 +5,16 @@ import Up from './Up';
 import Down from './Down';
 import Pokebutton from '../PokeButton';
 
+const Basement = styled.div`
+height: 100%;
+width: 100%;
+`
 
-const Poke = styled.div`
- height: 50vh;
- margin-top: 10%;
- display: block;
- position: absolute;
- z-index: ${props => props.open ? '0' : '1'};
- transition: z-index ${props => props.open ? '4s' : '0s'};
- float:left;
+const Pokebase = styled.div`
+ height: ${props => props.open ? '30vh' : '7vh'};
+ width: 97%;
+ margin-left: 1.5%;
+ background-color: ${({theme}) => theme.colors.blueclaro};
 `
 const ButtonOff = styled.button `
 height: 10%;
@@ -35,20 +36,31 @@ border: 1px solid  ${({theme}) => theme.colors.red1};
 export default function index(props) {
     const [state, setState] = useState(false);
 
+    //const [state, setState] = useState(false);
+    //    <Row>
+    //        <Col span={24}>
+    //            <Poke open={state}>
+    //                <Up opening={state} />
+    //                <div onClick={() => setState(!state)}>
+    //                    <Pokebutton opening={state} />
+    //                </div>
+    //                <Down opening={state} />
+    //                <div onClick={ () => setState(!state && (""))}> 
+    //                    <ButtonOff open={state}><Icon type="poweroff" /></ButtonOff>
+    //                </div>
+    //            </Poke>
+    //        </Col>
+    //    </Row>
     return (
         <Row>
-            <Col span={24}>
-                <Poke open={state}>
-                    <Up opening={state} />
+            <Basement>
+                <Up />
+                <Pokebase open={state}/>
                     <div onClick={() => setState(!state)}>
                         <Pokebutton opening={state} />
                     </div>
-                    <Down opening={state} />
-                    <div onClick={ () => setState(!state && (""))}> 
-                        <ButtonOff open={state}><Icon type="poweroff" /></ButtonOff>
-                    </div>
-                </Poke>
-            </Col>
+                <Down />
+            </ Basement>
         </Row>
     )
 }

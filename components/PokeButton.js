@@ -1,31 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-const Base1 = styled.div`
-height: 8vh;
-width: 27vw;
-margin-left: 0.5vw;
-background: ${({ theme }) => theme.colors.blueclaro};
-display: ${props => props.open ? 'none' : 'block'} ;
-opacity: ${props => props.open ? '0' : '1'};
-transition: display ${props => props.open ? '5s' : '20s'}, opacity ${props => props.open ? '5s' : '20s'};
-position: relative;
-z-index: 4;
-`
-
-const Bolablue2 = styled.button`
-    height: 24vh;
-    width: 24vh;
+const Bolablue = styled.button`
+    height: 40%;
+    width: 40%;
     background-color: ${({ theme }) => theme.colors.blueclaro};
     box-shadow: 0px 0px 2px 2px ${({ theme }) => theme.colors.blueclaromedio};
-    z-index: 5;
     border-radius: 100%;
     border-style: none;
-    margin-top: -11.5%;
-    margin-left: 31.5%;
+    margin-left: 30%;
+    top: 31%;
     position: absolute;
-    float: left;
-    display: block;
+    z-index: 2;
     display: ${props => props.open ? 'none' : 'block'};
     opacity: ${props => props.open ? '0' : '1'};
     transition: display ${props => props.open ? '10s' : '20s'} , opacity ${props => props.open ? '10s' : '15s'};
@@ -33,14 +19,13 @@ const Bolablue2 = styled.button`
         box-shadow: 0px 0px 2px 2px ${({ theme }) => theme.colors.blueescuro};
     }
 `
-const Bolablue3 = styled.div`
-    height: 20vh;
-    width: 20vh;
-    top: 25%;
+const Bolablue1 = styled.div`
+    height: 85%;
+    width: 90%;
     box-shadow: 0px 0px 2px 2px ${({ theme }) => theme.colors.blueclaromedio};
+    margin-left: 5%;
     border-style: none;
     border-radius: 100%;
-    margin-left: 4%;
     float: left;
     h1 {
         font-family: Arial, Helvetica, sans-serif;
@@ -56,12 +41,10 @@ const Bolablue3 = styled.div`
 export default function Pokebutton(props) {
 
     return (
-        <Base1 open={props.opening}>
-            <Bolablue2 open={props.opening}>
-                <Bolablue3>
+            <Bolablue open={props.opening}>
+                <Bolablue1>
                     <h1>POKEDEX</h1>
-                </Bolablue3>
-            </Bolablue2>
-        </Base1>
+                </Bolablue1>
+            </Bolablue>
     )
 }
