@@ -81,14 +81,14 @@ const Upsubrightbase2 = styled.div`
 `
 const Upbola = styled.div`
     height: 175%;
-    width:67.5%;
+    width:65%;
     background: ${({ theme }) => theme.colors.blueclaro};
     position: absolute;
     z-index:6;
     border-radius: 100%;
     border: 5px solid ${({ theme }) => theme.colors.redescuromedio};
     bottom: 30%;
-    margin-left: 16.25%;
+    margin-left: 17.5%;
 `
 const Upbolablack = styled.div`
     height: 97.5%;
@@ -105,7 +105,7 @@ const Upbolablue = styled.div`
     width:65%;
     background: ${({ theme }) => theme.colors.blueclaro};
     border-radius: 100%;
-    margin-top: 22.5%;
+    margin-top: 17.5%;
     margin-left: 17.5%;
 `
 

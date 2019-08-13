@@ -8,10 +8,12 @@ import Pokebutton from '../PokeButton';
 const Basement = styled.div`
 height: 100%;
 width: 100%;
+padding-top: 5%;
 `
 
 const Pokebase = styled.div`
- height: ${props => props.open ? '30vh' : '7vh'};
+ height: ${props => props.open ? '30vh' : '9vh'};
+ transition: height ${props => props.open ? '1s' : '0s'};
  width: 97%;
  margin-left: 1.5%;
  background-color: ${({theme}) => theme.colors.blueclaro};

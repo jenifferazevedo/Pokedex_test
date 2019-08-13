@@ -2,19 +2,19 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Bolablue = styled.button`
-    height: 40%;
-    width: 40%;
+    height: 36%;
+    width: 32%;
     background-color: ${({ theme }) => theme.colors.blueclaro};
     box-shadow: 0px 0px 2px 2px ${({ theme }) => theme.colors.blueclaromedio};
     border-radius: 100%;
     border-style: none;
-    margin-left: 30%;
-    top: 31%;
+    margin-left: 34%;
+    top: 35%;
     position: absolute;
     z-index: 2;
     display: ${props => props.open ? 'none' : 'block'};
     opacity: ${props => props.open ? '0' : '1'};
-    transition: display ${props => props.open ? '10s' : '20s'} , opacity ${props => props.open ? '10s' : '15s'};
+    transition: display ${props => props.open ? '1s' : '3s'} , opacity ${props => props.open ? '1s' : '3s'};
     :focus {
         box-shadow: 0px 0px 2px 2px ${({ theme }) => theme.colors.blueescuro};
     }
