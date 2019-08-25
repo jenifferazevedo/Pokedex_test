@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'antd';
+import Menu from '../components/Menu';
 import PokedexBase from '../components/PokedexBase';
 import PokedexInfo from '../components/PokedexInfo';
-import Social from '../components/SocialIcons/Social';
+import Social from '../components/Icons/Social';
 
-const Backgroundsite = styled.body`
-width: 100vw;
-height: auto;
-background: ${({ theme }) => theme.colors.background1} no-repeat;
-padding: 0px;
-margin: 0;
+const Backgroundsite = styled.div`
+width: 100%;
+background: ${({ theme }) => theme.colors.background1} no-repeat fixed;
+`
+const Footer =styled.div`
+background: ${({ theme }) => theme.colors.blue};
+width: 100%;
+text-align: center;
+margin-bottom: 2%;
 `
 
 export default function index(props) {
@@ -18,21 +22,19 @@ export default function index(props) {
     return (
         <Backgroundsite>
             <Row>
-                <h1>Pokedex Project - Jeniffer de Azevedo</h1>
+                <Menu title="Pokedex Jeniffer's Project" />
+            </Row>
+            <Row type="flex" justify="center">
+                <Col lg={7} md={10} sm={13} xs={24}>
+                    <PokedexBase />
+                    <PokedexInfo />
+                </Col>
             </Row>
             <Row>
-                <Col lg={22} md={22} sm={22} xs={24}>
-                    <Row>
-                        <Col lg={8} md={20} sm={22} xs={24}>
-                            <PokedexBase />
-                            <PokedexInfo />
-                        </Col>
-                    </Row>
-                </Col>
-                <Col lg={2}>
+                <Footer>
                     <Social />
-                </Col>
-            </Row>
+                </Footer>
+            </Row>            
         </Backgroundsite>
     )
 }

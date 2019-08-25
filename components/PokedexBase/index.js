@@ -8,6 +8,7 @@ import { Pokebutton, Pokebuttonoff } from './PokeButton';
 const Basement = styled.div`
 width: 100%;
 margin-left: 2.5%;
+margin-bottom: ${props => props.open ? '10%' : '20%'};
 position: relative;
 z-index:1;
 float: left;
@@ -16,7 +17,7 @@ transition: ${props => props.open ? '1.5s' : '0s'};
 `
 
 const Pokebase = styled.div`
- height: ${props => props.open ? '38vh' : '9vh'};
+ height: ${props => props.open ? '39vh' : '9vh'};
  transition: height ${props => props.open ? '1s' : '0s'};
  width: 92%;
  margin-left: 1.5%;
