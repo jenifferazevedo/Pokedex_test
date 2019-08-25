@@ -3,25 +3,26 @@ import styled from 'styled-components';
 import { Row, Col } from 'antd';
 
 const Base = styled.div`
-height: 25vh;
-width: 100%;
-padding: 0;
+width: 95%;
+height: calc((1 / 4) * 100vh);
 margin: 0;
-background: ${({ theme }) => theme.colors.red1};
+margin-top: ${props => props.open ? '0%' : '10%'};
 position: relative;
 z-index: 1;
 border-top-left-radius: 40px;
 border-top-right-radius: 40px;
+transition: ${props => props.open ? '0.8s' : '0s'};
 overflow: hidden;
+background: ${({ theme }) => theme.colors.red1};
+
 `
 const Basement = styled.div`
-height: 100%;
 width: 100%;
-padding: 0;
+height: 100%;
+position: absolute;
+z-index: 2;
 margin: 0;
 background: ${({ theme }) => theme.colors.red1};
-border-top-left-radius: 40px;
-border-top-right-radius: 40px;
 border-bottom: 5px solid ${({ theme }) => theme.colors.redescuromedio};
 `
 
@@ -34,7 +35,7 @@ const Upsubleftbase1 = styled.div`
     border-right: 5px solid ${({ theme }) => theme.colors.redescuromedio};
     border-bottom: 5px solid ${({ theme }) => theme.colors.redescuromedio};
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     box-shadow: 1px 1px 4px  ${({ theme }) => theme.colors.boxshadowmedio};
 `
 const Upsubleftbase2 = styled.div`
@@ -76,38 +77,34 @@ const Upsubrightbase2 = styled.div`
     box-shadow: -1px -1px 4px  ${({ theme }) => theme.colors.boxshadowmedio};
 `
 const Upbola = styled.div`
-    height: 175%;
-    width:65%;
+    height: 180%;
+    width:75%;
     background: ${({ theme }) => theme.colors.blueclaro};
     position: absolute;
     z-index:6;
     border-radius: 100%;
     border: 5px solid ${({ theme }) => theme.colors.redescuromedio};
-    margin-top: 10%;
-    margin-left: 17.5%;
+    margin-left: 12.5%;
+    top: 28%;
+    padding: 1.25%;
 `
 const Upbolablack = styled.div`
-    height: 97.5%;
-    width:97.5%;
+    width: 100%;
+    height: 100%;
     background: ${({ theme }) => theme.colors.black};
     border-radius: 100%;
-    margin-top: 1.25%;
-    margin-left: 1.25%;
-    position: absolute;
-    z-index: 7;
+    padding: 18%;
 `
 const Upbolablue = styled.div`
-    height: 65%;
-    width: 65%;
-    background: ${({ theme }) => theme.colors.blueclaro};
+    height: 100%;
+    width:100%;
+    background: ${({ theme }) => theme.colors.blueclaro};     
     border-radius: 100%;
-    margin-top: 17.5%;
-    margin-left: 17.5%;
 `
 
 export default function Up(props) {
     return (
-        <Base>
+        <Base open={props.opening}>
             <Basement>
                 <Upsubleftbase1 />
                 <Upsubleftbase2 />

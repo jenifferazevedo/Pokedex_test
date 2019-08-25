@@ -6,47 +6,56 @@ import Pokeability from './Pokeability';
 import Pokename from './Pokename';
 import Pokenumber from './Pokenumber';
 import Pokeexperience from './Pokeexperience';
-import { Row, Col, Icon } from 'antd';
+import { Row, Col, Icon, Input, Button } from 'antd';
 import axios from 'axios';
 
 const Pokeinfo = styled.div`
-    height: 33.3vh;
-    width: 27vw;
-    background-color: ${({ theme }) => theme.colors.blueclaro};
+    height: 37vh;
+    width: 90%;
     padding: 1% 2% 2% 2%;
-    margin-left: 0.75%;
-    margin-top: 15.2%;
+    margin-left: 5%;
     position: absolute;
-    z-index: 1;
+    z-index: 0;
+    float: left;
+    top: 26vh;
 `
 
 const Pokemonselecionado = styled.div`
-    height: 23vh;
-    width: 80%;
-    background: ${({ theme }) => theme.colors.blueclaromedio};
+    width: 90%;
+    background: ${({ theme }) => theme.colors.blue1};
     border-radius: 10px;
-    margin-top: 2%;
-    margin-left: 10%;
+    margin-top: 12%;
+    margin-left: 5%;
+    padding-bottom: 2%;
+    position: absolute;
+    z-index: 3;
 `
 
 const Searchbar = styled.div`
-height:6vh;
-margin-left: 3%;
-margin-right:0;
-form, input {
-width: 90%;
-border-radius: 5px;
-font-size:0.9em;
-font-family: 'Courier New', Courier, monospace;
-padding-left: 5px;
-}
-input:focus{
+    width: 100%;
+    margin-right:0;
+    position: absolute;
+    z-index: 2;
+    margin-top: 1%;
+    .ant-input {
+    width: 90%;
+    height: 10%;
+    border-radius: 5px;
+    font-size:0.9em;
+    font-family: 'Courier New', Courier, monospace;
+    float: left;
+    }
+    input:focus{
     outline-color: ${({ theme }) => theme.colors.red1}
-}
-button {
-    height: auto;
-    border-style: none;
+    }
+    .ant-btn {
+        padding: 0.2% 1.5%;
+        margin-left: 1%;
+        height: auto;
+        background-color: ${({ theme }) => theme.colors.white};
     .anticon svg {
+        padding: 0;
+        margin: 0;
         color: ${({ theme }) => theme.colors.red1};
         text-align: center;
     }
@@ -54,8 +63,13 @@ button {
 `
 
 const Errormsg = styled.div`
+height: 10%;
+width: 100%;
+padding: 0;
+margin: 0;
 font-size: 0.7em;
 color: ${({ theme }) => theme.colors.red1};
+padding: 0;
 `
 
 export default function index(props) {
@@ -82,42 +96,42 @@ export default function index(props) {
 
     console.log(pokemon);
     return (
-        <Row>
-            <Pokeinfo>
-                <Row>
-                    <Searchbar>
-                        <Col span={24}>
-                            <input type="text" onChange={input => setPokemon(input.target.value)} placeholder="Which pokemon are you looking for?"></input>
-                            <button onClick={() => PesquisaPokemon()}><Icon type="search" /></button>
-                        </Col>
-                        <Errormsg>{error && error}</Errormsg>
-                    </Searchbar>
-                </Row>
-                <Row>
-                    <Pokemonselecionado>
-                        <Col span={11}>
-                            <Row>
-                                <Pokefoto pokephoto={pokemon} />
-                            </Row>
-                            <Row>
-                                <Poketype pokemonselectedtype={pokemon} />
-                            </Row>
-                        </Col>
-                        <Col span={13}>
-                            <Row>
-                                <Pokename pokemonname={pokemon} />
-                                <Pokenumber pokemonnumber={pokemon} />
-                            </Row>
-                            <Row>
-                                <Pokeability pokehabilidade={pokemon} />
-                            </Row>
-                            <Row>
-                                <Pokeexperience pokemonexperience={pokemon} />
-                            </Row>
-                        </Col>
-                    </Pokemonselecionado>
-                </Row>
-            </Pokeinfo>
-        </Row>
+        <Pokeinfo>
+            <Row>
+                <Searchbar>
+                    <Row>
+                    <Input type="text" onChange={input => setPokemon(input.target.value)} placeholder="Which pokemon are you looking for?"></Input>
+                    <Button onClick={() => PesquisaPokemon()}><Icon type="search" /></Button>
+                    </Row>
+                    <Row>
+                    <Errormsg>{error && error}</Errormsg>
+                    </Row>
+                </Searchbar>
+            </Row>
+            <Row>
+                <Pokemonselecionado>
+                    <Col span={11}>
+                        <Row>
+                            <Pokefoto pokephoto={pokemon} />
+                        </Row>
+                        <Row>
+                            <Poketype pokemonselectedtype={pokemon} />
+                        </Row>
+                    </Col>
+                    <Col span={13}>
+                        <Row>
+                            <Pokename pokemonname={pokemon} />
+                            <Pokenumber pokemonnumber={pokemon} />
+                        </Row>
+                        <Row>
+                            <Pokeability pokehabilidade={pokemon} />
+                        </Row>
+                        <Row>
+                            <Pokeexperience pokemonexperience={pokemon} />
+                        </Row>
+                    </Col>
+                </Pokemonselecionado>
+            </Row>
+        </Pokeinfo>
     )
 }

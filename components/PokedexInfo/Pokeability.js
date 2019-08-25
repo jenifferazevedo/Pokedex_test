@@ -13,7 +13,7 @@ const Ability = styled.div`
 `
 
 const Abilitystyled = styled.div`
-height: auto;
+height: 10vh;
 width: 90%;
 font-family: 'Courier New', Courier, monospace;
 text-align: center;
@@ -23,6 +23,10 @@ color: ${({ theme }) => theme.colors.blueescuro};
 background-color: ${({ theme }) => theme.colors.blueclaro};
 border-radius: 3px;
 margin: 5% 0%;
+padding: 5%;
+p {
+    margin-bottom: 2%;
+}
 `
 
 export default function Pokeability(props) {

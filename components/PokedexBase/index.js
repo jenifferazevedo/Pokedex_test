@@ -3,38 +3,28 @@ import styled from 'styled-components';
 import { Row, Col, Icon } from 'antd';
 import Up from './Up';
 import Down from './Down';
-import Pokebutton from '../PokeButton';
+import { Pokebutton, Pokebuttonoff } from './PokeButton';
 
 const Basement = styled.div`
-height: 100%;
 width: 100%;
-padding-top: 5%;
+margin-left: 2.5%;
+position: relative;
+z-index:1;
+float: left;
+z-index: ${props => props.open ? '0' : '2'};
+transition: ${props => props.open ? '1.5s' : '0s'};
 `
 
 const Pokebase = styled.div`
- height: ${props => props.open ? '30vh' : '9vh'};
+ height: ${props => props.open ? '38vh' : '9vh'};
  transition: height ${props => props.open ? '1s' : '0s'};
- width: 97%;
+ width: 92%;
  margin-left: 1.5%;
- background-color: ${({theme}) => theme.colors.blueclaro};
+ background-color: ${({ theme }) => theme.colors.blueclaro};
+ position: relative;
 `
-const ButtonOff = styled.button `
-height: 10%;
-width: 8%;
-background-color: ${({theme}) => theme.colors.cinzaclaro};
-margin-top: -8%;
-margin-left: 46%;
-position: absolute;
-z-index: ${props => props.open ? '7' : '0'};
-transition: z-index ${props => props.open ? '4s' : '0s'};
-box-shadow: 1px 1px ${({theme}) => theme.colors.boxshadowmedio};
-border-radius: 50%;
-border: 1px solid  ${({theme}) => theme.colors.red1};
-:focus {
-    border-radius: 50%;
-}
-`
-    
+
+
 export default function index(props) {
     const [state, setState] = useState(false);
 
@@ -53,16 +43,19 @@ export default function index(props) {
     //            </Poke>
     //        </Col>
     //    </Row>
+    // <Pokebutton opening={state} />
     return (
-        <Row>
-            <Basement>
-                <Up />
-                <Pokebase open={state}/>
-                    <div onClick={() => setState(!state)}>
-                        <Pokebutton opening={state} />
-                    </div>
-                <Down />
-            </ Basement>
-        </Row>
+        <Basement open={state}>
+            <Up opening={state} />
+            <Pokebase open={state}>
+                <div onClick={() => setState(!state)}>
+                    <Pokebutton opening={state} />
+                </div>
+            </Pokebase>
+            <Down />
+            <div onClick={() => setState(!state && (""))}>
+                <Pokebuttonoff opening={state} />
+            </div>
+        </ Basement>
     )
 }
