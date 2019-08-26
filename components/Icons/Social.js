@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Row, Col, Icon, Button } from 'antd';
 
 const Iconbutton = styled.div`
+    padding-bottom: 13px;
     .ant-btn{
         width: 40px;
         height: 40px;

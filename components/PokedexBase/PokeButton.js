@@ -39,7 +39,7 @@ const Bolablue1 = styled.div`
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-family: 'Courier New', Courier, monospace;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         font-weight: bold;
         color: ${({ theme }) => theme.colors.blueescuro};
     }

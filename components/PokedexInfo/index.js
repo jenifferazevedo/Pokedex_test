@@ -85,7 +85,8 @@ export default function index(props) {
             axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`).then((response) => {
                 // handle success
                 console.log(response.data)
-                setResult(response.data);
+                setResult(response.data)
+                setPokemon ("");
             })
                 .catch((error) => {
                     // handle error
