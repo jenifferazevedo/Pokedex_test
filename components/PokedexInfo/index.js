@@ -84,13 +84,14 @@ export default function index(props) {
             axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`).then((response) => {
                 // handle success
                 console.log(response.data)
-                setPokemon(response.data);
+                setPokemon(response.data)
+                pokemon(value= "Procure outro pokemon");
             })
                 .catch((error) => {
                     // handle error
                     setError("Ops, digitou o nome do pokemon errado")
                     console.log(error);
-                })
+                })             
         }
     }
 
@@ -100,11 +101,12 @@ export default function index(props) {
             <Row>
                 <Searchbar>
                     <Row>
-                    <Input type="text" onChange={input => setPokemon(input.target.value)} placeholder="Which pokemon are you looking for?"></Input>
-                    <Button onClick={() => PesquisaPokemon()}><Icon type="search" /></Button>
+                        <Input value={pokemon} type="text" onChange={input => setPokemon(input.target.value)} onKeyPress={event => { if (event.key === 'Enter') {PesquisaPokemon()}}} 
+                        placeholder="Which pokemon are you looking for?"></Input>
+                        <Button onClick={() => PesquisaPokemon()}><Icon type="search" /></Button>
                     </Row>
                     <Row>
-                    <Errormsg>{error && error}</Errormsg>
+                        <Errormsg>{error && error}</Errormsg>
                     </Row>
                 </Searchbar>
             </Row>

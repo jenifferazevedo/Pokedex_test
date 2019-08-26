@@ -7,13 +7,13 @@ const Basement = styled.div`
     box-shadow: 2px 2px 4px  ${({ theme }) => theme.colors.boxshadowescuro};
     padding-left: 2.5%;
     h1{
-    color: ${({ theme }) => theme.colors.blueescuro};
-}
+    color: ${({ theme }) => theme.colors.cinzaescuro};
+    }
     svg {
     width: 10px;
     height: auto;
     fill: ${({ theme }) => theme.colors.blueclaro};
-}
+    }
 `
 
 export default function Menu(props) {

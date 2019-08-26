@@ -18,6 +18,7 @@ const theme = {
     white: 'white',
     boxshadowescuro: 'rgba(0, 0, 0, 50%)',
     boxshadowmedio: 'rgba(0, 0, 0, 25%)',
+    blueeffect: 'linear-gradient(180deg, rgba(138,215,255,1) 0%, rgba(8,8,160,1) 70%)',
   }
 }
 

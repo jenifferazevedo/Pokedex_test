@@ -9,15 +9,26 @@ const Iconbutton = styled.div`
         margin: 0% 2.5%;
         padding: 6px;
         border-radius: 100%;
-        box-shadow: 0px 0px 4px 1px ${({ theme }) => theme.colors.red1};
         :hover {
         box-shadow: 0px 0px 5px 2px ${({ theme }) => theme.colors.blueescuro};
-        }
+        };
         .anticon{
         padding: 0;
         margin: 0;
         text-align: center;
         font-size: 1.8em;
+        fill: ${({ theme }) => theme.colors.cinzaescuro};
+        };
+        @keyframes animatedgradient {
+	    0% {
+		    background-position: 0% 50%;
+	    }
+	    50% {
+		    background-position: 100% 50%;
+	    }
+	    100% {
+		    background-position: 0% 50%;
+	    }
         }
     }
 `
@@ -30,6 +41,6 @@ export default function Social() {
                 <Button href='https://github.com/jenifferazevedo' target="_blank"><Icon type="github" /></Button>
                 <Button href='https://www.behance.net/jenifferazevedo' target="_blank"><Icon type="behance-square" /></Button>
             </Iconbutton>
-            </div>
+        </div>
     )
 }
