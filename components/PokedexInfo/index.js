@@ -85,8 +85,7 @@ export default function index(props) {
             axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`).then((response) => {
                 // handle success
                 console.log(response.data)
-                setResult(response.data)
-                setPokemon(value= "Procure outro pokemon");
+                setPokemon(response.data);
             })
                 .catch((error) => {
                     // handle error
@@ -102,7 +101,7 @@ export default function index(props) {
             <Row>
                 <Searchbar>
                     <Row>
-                        <Input value={setPokemon} type="text" onChange={input => setResult(input.target.value)} onKeyPress={event => { if (event.key === 'Enter') {PesquisaPokemon()}}} 
+                        <Input type="text" onChange={input => setPokemon(input.target.value)} onKeyPress={event => { if (event.key === 'Enter') {PesquisaPokemon()}}} 
                         placeholder="Which pokemon are you looking for?"></Input>
                         <Button onClick={() => PesquisaPokemon()}><Icon type="search" /></Button>
                     </Row>
