@@ -85,7 +85,7 @@ export default function index(props) {
             axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`).then((response) => {
                 // handle success
                 console.log(response.data)
-                setPokemon(response.data);
+                setResult(response.data);
             })
                 .catch((error) => {
                     // handle error
@@ -101,7 +101,7 @@ export default function index(props) {
             <Row>
                 <Searchbar>
                     <Row>
-                        <Input type="text" onChange={input => setPokemon(input.target.value)} onKeyPress={event => { if (event.key === 'Enter') {PesquisaPokemon()}}} 
+                        <Input type="text" value={pokemon} onChange={input => setPokemon(input.target.value)} onKeyPress={event => { if (event.key === 'Enter') {PesquisaPokemon()}}} 
                         placeholder="Which pokemon are you looking for?"></Input>
                         <Button onClick={() => PesquisaPokemon()}><Icon type="search" /></Button>
                     </Row>
@@ -114,22 +114,22 @@ export default function index(props) {
                 <Pokemonselecionado>
                     <Col span={11}>
                         <Row>
-                            <Pokefoto pokephoto={pokemon} />
+                            <Pokefoto pokephoto={result} />
                         </Row>
                         <Row>
-                            <Poketype pokemonselectedtype={pokemon} />
+                            <Poketype pokemonselectedtype={result} />
                         </Row>
                     </Col>
                     <Col span={13}>
                         <Row>
-                            <Pokename pokemonname={pokemon} />
-                            <Pokenumber pokemonnumber={pokemon} />
+                            <Pokename pokemonname={result} />
+                            <Pokenumber pokemonnumber={result} />
                         </Row>
                         <Row>
-                            <Pokeability pokehabilidade={pokemon} />
+                            <Pokeability pokehabilidade={result} />
                         </Row>
                         <Row>
-                            <Pokeexperience pokemonexperience={pokemon} />
+                            <Pokeexperience pokemonexperience={result} />
                         </Row>
                     </Col>
                 </Pokemonselecionado>
