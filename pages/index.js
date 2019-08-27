@@ -10,7 +10,7 @@ const Backgroundsite = styled.div`
 width: 100%;
 background: ${({ theme }) => theme.colors.background1} no-repeat fixed;
 `
-const Footer =styled.div`
+const Footer = styled.div`
 background: ${({ theme }) => theme.colors.blue};
 width: 100%;
 text-align: center;
@@ -34,7 +34,8 @@ export default function index(props) {
                 <Footer>
                     <Social />
                 </Footer>
-            </Row>            
+            </Row>
         </Backgroundsite>
+
     )
 }
