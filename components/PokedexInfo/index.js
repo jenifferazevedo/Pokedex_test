@@ -97,10 +97,10 @@ export default function index(props) {
     }
 
     useEffect(() => {  
-        props.resetStates && setResult("")
+     props.resetStates && setResult("");
     },
     [props.resetStates]);
-
+//SE EU COLOCAR [PROPS.RESETSTATES(!SETRESULT)] funciona mas fica aparecendo o treco toda hora
    
     console.log(pokemon);
     return (
@@ -133,7 +133,7 @@ export default function index(props) {
                             <Pokenumber pokemonnumber={result} />
                         </Row>
                         <Row>
-                            <Pokeability pokehabilidade={result} />
+                            <Pokeability pokeataque={result} />
                         </Row>
                         <Row>
                             <Pokeexperience pokemonexperience={result} />

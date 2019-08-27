@@ -12,7 +12,7 @@ const Ability = styled.div`
     margin-top: -2%;
 `
 
-const Abilitystyled = styled.div`
+const Habilidadepokemon = styled.div`
 height: 10vh;
 width: 90%;
 font-family: 'Courier New', Courier, monospace;
@@ -34,14 +34,14 @@ export default function Pokeability(props) {
         <Ability>
             <Row>Abilities:</Row>
             <Row>
-                <Abilitystyled>
-                    {props.pokehabilidade.abilities ? props.pokehabilidade.abilities.map(abilitie => {
+                <Habilidadepokemon>
+                    {props.pokeataque.abilities ? props.pokeataque.abilities.map(abilitie => {
                         return <p>{abilitie.ability.name}</p>
                     }) : <div><p>hability</p>
                             <p>hability</p>
                             <p>hability</p></div>
                     }
-                </Abilitystyled>
+                </Habilidadepokemon>
             </Row>
         </Ability>
     )

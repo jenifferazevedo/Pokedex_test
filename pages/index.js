@@ -19,11 +19,11 @@ margin-bottom: 2%;
 `
 
 export default function index(props) {
-    const [resetStates, setResetStates] = useState(false)
+    const [resetStates, setResetStates] = useState("")
 
     function resetStateFunction (reset) {
-        setResetStates(reset);
-        console.log(reset)
+        setResetStates(!reset);
+        console.log(setResetStates)
     }
 
     return (
