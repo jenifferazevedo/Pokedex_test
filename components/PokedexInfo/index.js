@@ -96,6 +96,12 @@ export default function index(props) {
         }
     }
 
+    useEffect(() => {  
+        props.resetStates && setResult("")
+    },
+    [props.resetStates]);
+
+   
     console.log(pokemon);
     return (
         <Pokeinfo>

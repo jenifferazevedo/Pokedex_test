@@ -5,6 +5,7 @@ import Menu from '../components/Menu';
 import PokedexBase from '../components/PokedexBase';
 import PokedexInfo from '../components/PokedexInfo';
 import Social from '../components/Icons/Social';
+import { Pokebuttonoff } from '../components/PokedexBase/PokeButton';
 
 const Backgroundsite = styled.div`
 width: 100%;
@@ -18,6 +19,12 @@ margin-bottom: 2%;
 `
 
 export default function index(props) {
+    const [resetStates, setResetStates] = useState(false)
+
+    function resetStateFunction (reset) {
+        setResetStates(reset);
+        console.log(reset)
+    }
 
     return (
         <Backgroundsite>
@@ -26,8 +33,8 @@ export default function index(props) {
             </Row>
             <Row type="flex" justify="center">
                 <Col lg={7} md={10} sm={13} xs={24}>
-                    <PokedexBase />
-                    <PokedexInfo />
+                    <PokedexBase resetStates={resetStateFunction}/>
+                    <PokedexInfo resetStates={resetStateFunction} />
                 </Col>
             </Row>
             <Row>
