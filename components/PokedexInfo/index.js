@@ -85,7 +85,7 @@ export default function index(props) {
             axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`).then((response) => {
                 // handle success
                 console.log(response.data)
-                setResult(response.data)
+                setResult(response.data);
                 setPokemon ("");
             })
                 .catch((error) => {
@@ -97,10 +97,9 @@ export default function index(props) {
     }
 
     useEffect(() => {  
-     props.resetStates && setResult("");
+     props.resetState && setResult("");
     },
-    [props.resetStates]);
-//SE EU COLOCAR [PROPS.RESETSTATES(!SETRESULT)] funciona mas fica aparecendo o treco toda hora
+    [props.resetState]);
    
     console.log(pokemon);
     return (

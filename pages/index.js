@@ -23,6 +23,7 @@ export default function index(props) {
 
     function resetStateFunction (reset) {
         setResetStates(!reset);
+        console.log(resetStateFunction)
         console.log(setResetStates)
     }
 
@@ -33,8 +34,8 @@ export default function index(props) {
             </Row>
             <Row type="flex" justify="center">
                 <Col lg={7} md={10} sm={13} xs={24}>
-                    <PokedexBase resetStates={resetStateFunction}/>
-                    <PokedexInfo resetStates={resetStateFunction} />
+                    <PokedexBase resetState={resetStateFunction}/>
+                    <PokedexInfo resetState={resetStates} />
                 </Col>
             </Row>
             <Row>
