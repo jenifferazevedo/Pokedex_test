@@ -76,6 +76,7 @@ export default function index(props) {
     const [pokemon, setPokemon] = useState("");
     const [error, setError] = useState("");
     const [result, setResult] = useState ("");
+    const [state, setState] = useState(false);
 
     function PesquisaPokemon() {
         if (pokemon.length === 0) {
@@ -97,9 +98,9 @@ export default function index(props) {
     }
 
     useEffect(() => {  
-     props.resetState && setResult("");
-    },
-    [props.resetState]);
+        props.resetStates && setResult("");
+    }, [props.resetStates]);
+
    
     console.log(pokemon);
     return (

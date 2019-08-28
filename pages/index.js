@@ -19,10 +19,10 @@ margin-bottom: 2%;
 `
 
 export default function index(props) {
-    const [resetStates, setResetStates] = useState(false)
+    const [resetStates, setResetStates] = useState("")
 
-    function ResetData (params) {
-        setResetStates(!params);
+    function resetStateFunction (reset) {
+        setResetStates(!reset);
         console.log(setResetStates)
     }
 
@@ -33,8 +33,8 @@ export default function index(props) {
             </Row>
             <Row type="flex" justify="center">
                 <Col lg={7} md={10} sm={13} xs={24}>
-                    <PokedexBase resetState={()=> ResetData()}/>
-                    <PokedexInfo resetState={resetStates} resetStateFunction={() => ResetData()} />
+                    <PokedexBase resetStates={resetStateFunction}/>
+                    <PokedexInfo resetStates={resetStateFunction} />
                 </Col>
             </Row>
             <Row>
