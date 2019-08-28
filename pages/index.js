@@ -34,7 +34,7 @@ export default function index(props) {
             <Row type="flex" justify="center">
                 <Col lg={7} md={10} sm={13} xs={24}>
                     <PokedexBase resetState={()=> ResetData()}/>
-                    <PokedexInfo resetState={resetStates} />
+                    <PokedexInfo resetState={resetStates} resetStateFunction={() => ResetData()} />
                 </Col>
             </Row>
             <Row>

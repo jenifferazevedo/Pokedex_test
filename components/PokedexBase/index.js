@@ -54,7 +54,7 @@ export default function index(props) {
                 </div>
             </Pokebase>
             <Down />
-            <div onClick={() => props.resetState(!state) || setState(!state)}>
+            <div onClick={() => props.resetStateFunction || setState(!state)}>
                 <Pokebuttonoff opening={state} />
             </div>
         </ Basement>
