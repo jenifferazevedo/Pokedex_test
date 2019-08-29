@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Pokemontype = styled.div`
-    height: 3vh;
     width: 60%;
     color: ${({ theme }) => theme.colors.white};
     background: ${({ theme }) => theme.colors.blueescuro};

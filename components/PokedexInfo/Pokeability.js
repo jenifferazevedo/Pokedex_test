@@ -13,7 +13,6 @@ const Ability = styled.div`
 `
 
 const Habilidadepokemon = styled.div`
-height: 10vh;
 width: 90%;
 font-family: 'Courier New', Courier, monospace;
 text-align: center;

@@ -14,7 +14,9 @@ border-top-right-radius: 40px;
 transition: ${props => props.open ? '0.8s' : '0s'};
 overflow: hidden;
 background: ${({ theme }) => theme.colors.red1};
-
+@media (max-width: 568px) {
+    height: 170px;
+}
 `
 const Basement = styled.div`
 width: 100%;

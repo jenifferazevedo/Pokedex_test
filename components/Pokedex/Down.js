@@ -12,6 +12,9 @@ z-index: 1;
 border-bottom-left-radius: 40px;
 border-bottom-right-radius: 40px; 
 overflow: hidden;
+@media (max-width: 568px) {
+    height: 170px;
+}
 `
 const Basement = styled.div`
 height: 100%;

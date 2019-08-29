@@ -2,10 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'antd';
 import Menu from '../components/Menu';
-import PokedexBase from '../components/PokedexBase';
-import PokedexInfo from '../components/PokedexInfo';
+import Pokedex from '../components/Pokedex';
 import Social from '../components/Icons/Social';
-import { Pokebuttonoff } from '../components/PokedexBase/PokeButton';
 
 const Backgroundsite = styled.div`
 width: 100%;
@@ -22,12 +20,6 @@ margin-bottom: 2%;
 `
 
 export default function index(props) {
-    const [resetStates, setResetStates] = useState("")
-
-    function resetStateFunction (reset) {
-        setResetStates(!reset);
-        console.log(setResetStates)
-    }
 
     return (
         <Backgroundsite>
@@ -36,8 +28,7 @@ export default function index(props) {
             </Row>
             <Row type="flex" justify="center">
                 <Col lg={7} md={10} sm={13} xs={24}>
-                    <PokedexBase resetStates={resetStateFunction}/>
-                    <PokedexInfo resetStates={resetStateFunction} />
+                    <Pokedex />
                 </Col>
             </Row>
             <Row>

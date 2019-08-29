@@ -13,7 +13,9 @@ const Photoprincipal = styled.div`
         width: ${props => props.imagemPokemon ? '105%' : '70%'};
         margin: ${props => props.imagemPokemon ? '0' : '15% 15%'};
     }
-    
+    @media (max-width: 568px) {
+    height: 130px;
+    }
 `
 const Pokeballfoto = "../static/pokeball.png";
 

@@ -10,14 +10,17 @@ import { Row, Col, Icon, Input, Button } from 'antd';
 import axios from 'axios';
 
 const Pokeinfo = styled.div`
-    height: 37vh;
     width: 90%;
+    height: 37vh;
     padding: 1% 2% 2% 2%;
     margin-left: 5%;
     position: absolute;
-    z-index: 0;
-    float: left;
-    top: 26vh;
+    z-index: ${props => props.open ? '2' : '-1'};
+    transition: z-index ${props => props.open ? '2s' : '0s'};
+    @media (max-width: 568px) {
+    height: 200px;
+    top: 10px;
+    }
 `
 
 const Pokemonselecionado = styled.div`
@@ -29,6 +32,9 @@ const Pokemonselecionado = styled.div`
     padding-bottom: 2%;
     position: absolute;
     z-index: 3;
+    @media (max-width: 568px) {
+    height: 170px;
+    }
 `
 
 const Searchbar = styled.div`
@@ -75,8 +81,8 @@ padding: 0;
 export default function index(props) {
     const [pokemon, setPokemon] = useState("");
     const [error, setError] = useState("");
-    const [result, setResult] = useState ("");
-    const [state, setState] = useState(false);
+    const [result, setResult] = useState (false);
+    const [state, setState] = useState("");
 
     function PesquisaPokemon() {
         if (pokemon.length === 0) {
@@ -97,14 +103,14 @@ export default function index(props) {
         }
     }
 
-    useEffect(() => {  
-        props.resetStates && setResult("");
-    }, [props.resetStates]);
+    useEffect(() => {
+        props.resetStates && setResult(!result);
+      }, [props.resetStates]);
 
    
     console.log(pokemon);
     return (
-        <Pokeinfo>
+        <Pokeinfo open={props.opening}>
             <Row>
                 <Searchbar>
                     <Row>
